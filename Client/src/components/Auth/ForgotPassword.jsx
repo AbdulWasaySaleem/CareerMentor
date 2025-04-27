@@ -8,7 +8,7 @@ const ForgotPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/verify-identity');
+    navigate('/reset-password');
     console.log('Sending reset link to:', email);
   };
 
