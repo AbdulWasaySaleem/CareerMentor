@@ -1,18 +1,11 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-
-export const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-})
+export const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sender = {
-  email: process.env.SENDER_EMAIL, 
+  email: process.env.FROM_EMAIL,
   name: process.env.SENDER_NAME,
 };
